@@ -1,0 +1,147 @@
+{
+  "timestamp": "20260519_185843",
+  "hash": "5frkp01fryrixph75zbqhaxn2nq295xr",
+  "out_path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output",
+  "nodes": [
+{
+  "node": "dataset_np",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/dataset_np/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "ndarray",
+  "dependencies": [],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "X",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/X/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "ndarray",
+  "dependencies": ["dataset_np"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "Y",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/Y/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "ndarray",
+  "dependencies": ["dataset_np"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "splits",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/splits/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "list",
+  "dependencies": ["X", "Y"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "X_train",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/X_train/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "ndarray",
+  "dependencies": ["splits"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "X_test",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/X_test/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "ndarray",
+  "dependencies": ["splits"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "y_train",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/y_train/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "ndarray",
+  "dependencies": ["splits"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "y_test",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/y_test/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "ndarray",
+  "dependencies": ["splits"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "trained_model",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/trained_model/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "XGBClassifier",
+  "dependencies": ["X_train", "y_train"],
+  "success": true,
+  "warnings": true
+},
+{
+  "node": "y_pred",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/y_pred/artifact",
+  "runtime": "Python",
+  "serializer": "default",
+  "class": "ndarray",
+  "dependencies": ["X_test", "trained_model"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "combined_df",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/combined_df/artifact",
+  "runtime": "Python",
+  "serializer": "arrow",
+  "class": "DataFrame",
+  "dependencies": ["y_pred", "y_test"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "confusion_matrix",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/confusion_matrix/artifact",
+  "runtime": "R",
+  "serializer": "json",
+  "class": "data.frame",
+  "dependencies": ["combined_df"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "accuracy",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/accuracy/artifact",
+  "runtime": "Python",
+  "serializer": "json",
+  "class": "float",
+  "dependencies": ["y_pred", "y_test"],
+  "success": true,
+  "warnings": false
+},
+{
+  "node": "report",
+  "path": "/nix/store/5frkp01fryrixph75zbqhaxn2nq295xr-pipeline_output/report/artifact",
+  "runtime": "Quarto",
+  "serializer": "default",
+  "class": "QuartoOutput",
+  "dependencies": ["accuracy", "confusion_matrix"],
+  "success": true,
+  "warnings": false
+}
+]
+}

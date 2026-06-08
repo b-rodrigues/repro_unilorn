@@ -1,0 +1,16 @@
+{
+  "dataset_np": "/nix/store/mwski9qykrp3lv3kyixwqal3xm4419s5-dataset_np.drv",
+  "X_test": "/nix/store/d8j1vjkn01wnlkqi5qiakag4iigkgg8i-X_test.drv",
+  "X_train": "/nix/store/hj7nfbyw0l5vb0wcrdl9bri2pbfx3rfc-X_train.drv",
+  "report": "/nix/store/0hpjapivki4f0cx08caik3m0f2f2v5nr-report.drv",
+  "y_train": "/nix/store/vixnijbkfhpcg4x7ivf46a9ppa7zv3hm-y_train.drv",
+  "y_pred": "/nix/store/3cpp308zrrx22abd91lph2f7zmnac914-y_pred.drv",
+  "y_test": "/nix/store/0x2d3xha2j8b8kcv9162m54cx80cgnfk-y_test.drv",
+  "splits": "/nix/store/zlk2p27kl2lbcx9lv4wmldvbxddbjw9c-splits.drv",
+  "Y": "/nix/store/vw1hq3h3gy0sv28hfgr04k3n6q3nxn05-Y.drv",
+  "combined_df": "/nix/store/5b8lax2apca7cid7hj9b3z8gz3qnn5ja-combined_df.drv",
+  "confusion_matrix": "/nix/store/rgkywd73nxvj80vvdhjh4r6gzhsp5n2z-confusion_matrix.drv",
+  "trained_model": "/nix/store/1rks28rzdg6sinxz4hj6aywq0895cicl-trained_model.drv",
+  "X": "/nix/store/mjzyw1ca8nz151w1mnb0bwi5kz3d48nn-X.drv",
+  "accuracy": "/nix/store/b7jrvv8j8sphxzlxj71apy9r2dx91ah5-accuracy.drv"
+}
