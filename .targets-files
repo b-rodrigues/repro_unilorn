@@ -67,8 +67,11 @@
 .quarto/project-cache/f8f8947983eeef1bfc930e5f2e6f7ed6
 .quarto/xref/3e97d247
 .quarto/xref/INDEX
+.quarto/xref/e34650c9
 .quarto/xref/e817b22b
+.quarto/xref/fcc9d587
 .targets-files
+.targets-runs/
 _freeze/index/execute-results/pptx.json
 _freeze/index/libs/revealjs/dist/reset.css
 _freeze/index/libs/revealjs/dist/reveal.css
